@@ -1,11 +1,9 @@
 package com.instilunchbox.AdminModule.model;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
 import java.io.Serializable;
 
 @Entity
-@Transactional
 public class instiUser implements Serializable {
 
     @Id
