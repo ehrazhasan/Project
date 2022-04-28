@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/InstiUsr")
+@RequestMapping("/InstiUser")
 public class instiUserResource {
 
     private final instiService InstiService;
@@ -32,7 +32,7 @@ public class instiUserResource {
     }
 
     @GetMapping("/get/{status}")
-    public ResponseEntity<List<instiUser>> getAllInstiUsersByStatus(int status){
+    public ResponseEntity<List<instiUser>> getAllInstiUsersByStatus(@PathVariable("status") int status){
 
         List<instiUser> newInstiUser = InstiService.findAllInstiUserByStatus(status);
         return new ResponseEntity<>(newInstiUser, HttpStatus.OK);
