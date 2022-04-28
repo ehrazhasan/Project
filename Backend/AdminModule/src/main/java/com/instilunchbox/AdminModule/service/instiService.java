@@ -29,7 +29,7 @@ public class instiService {
         return instiRepo.findAll();
     }
 
-    public List<instiUser> findInstiUserByStatus(int status){
+    public List<instiUser> findAllInstiUserByStatus(int status){
         return (List<instiUser>) instiRepo.findAllInstiUsersByStatus(status);
     }
 }
