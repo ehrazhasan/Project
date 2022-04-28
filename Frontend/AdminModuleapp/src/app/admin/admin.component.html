@@ -1,14 +1,18 @@
-<div class="container">
-  <div class="card">
+<div class="container my-5">
+  <div *ngFor='let user of users' class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Pending Requests</h5>
       <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk of the
-        card's content.
+        Id : {{user.id}}
+        <br>
+        Status: {{user.status}}
       </p>
+<!--      <p class="card-text">-->
+<!--        -->
+<!--      </p>-->
       <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-success mx-2" type="button">Approve</button>
-        <button class="btn btn-success mx-2" type="button">Reject</button>
+        <button (click) = "onClick(1, user.id)" class="btn btn-success mx-1" type="button">Approve</button>
+        <button (click) = "onClick(2, user.id)" class="btn btn-success mx-1" type="button">Reject</button>
       </div>
     </div>
   </div>

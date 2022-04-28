@@ -1,12 +1,8 @@
 package com.instilunchbox.AdminModule.service;
 
-import com.instilunchbox.AdminModule.Exception.UserNotFoundException;
 import com.instilunchbox.AdminModule.Repo.InstiRepo;
 import com.instilunchbox.AdminModule.model.instiUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,10 +11,9 @@ import java.util.List;
 @Service
 @Transactional
 public class instiService {
-
+    @Autowired
     private final InstiRepo instiRepo;
 
-    @Autowired
     public instiService(InstiRepo instiRepo) {
         this.instiRepo = instiRepo;
     }
@@ -30,7 +25,11 @@ public class instiService {
     public List<instiUser> findAllInstiUsers(){
         return instiRepo.findAll();
     }
-    public List<instiUser> findAllInstiUserByStatus(int Status){
-        return (List<instiUser>) instiRepo.findAllInstiUsersByStatus(Status);
+    public List<instiUser> findAllInstiUserByStatus(){
+        return (List<instiUser>) instiRepo.findAllInstiUsersByStatus();
+    }
+
+    public Integer updateInstiUser(Long id, Integer status){
+        return instiRepo.updateUserStatusById(id, status);
     }
 }

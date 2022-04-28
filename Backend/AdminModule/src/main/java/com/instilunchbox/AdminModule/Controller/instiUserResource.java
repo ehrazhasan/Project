@@ -1,7 +1,10 @@
 package com.instilunchbox.AdminModule.Controller;
 
+import antlr.build.Tool;
 import com.instilunchbox.AdminModule.model.instiUser;
 import com.instilunchbox.AdminModule.service.instiService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +16,7 @@ import java.util.List;
 @RequestMapping("/InstiUser")
 public class instiUserResource {
 
+    @Autowired
     private final instiService InstiService;
 
     public instiUserResource(instiService instiService) {
@@ -31,10 +35,23 @@ public class instiUserResource {
         return new ResponseEntity<>(newInstiUser, HttpStatus.CREATED);
     }
 
-    @GetMapping("/get/{status}")
-    public ResponseEntity<List<instiUser>> getAllInstiUsersByStatus(@PathVariable("status") int status){
-
-        List<instiUser> newInstiUser = InstiService.findAllInstiUserByStatus(status);
+    @GetMapping("/get")
+    public ResponseEntity<List<instiUser>> getAllInstiUsersByStatus(){
+        List<instiUser> newInstiUser = InstiService.findAllInstiUserByStatus();
         return new ResponseEntity<>(newInstiUser, HttpStatus.OK);
+    }
+
+    @PutMapping("/update/{id}/{status}")
+    public ResponseEntity<Integer> updateInstiStatus(@PathVariable("id") Long id, @PathVariable("status") Integer status){
+
+        System.out.println(id);
+        System.out.println(status);
+        InstiService.updateInstiUser(id, status);
+        if(status == 1){
+
+            return new ResponseEntity<Integer>(1, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Integer>(0, HttpStatus.OK);
     }
 }
