@@ -23,10 +23,11 @@ export class AdminComponent implements OnInit {
   //   console.log(this.users);
   // }
 
-  fetchUsers(){
+  fetchUsers() : void{
     this.serviceAdmin.fetchUsers().subscribe(
       response => {
         console.log(response);
+
         this.users = response
       }
     );
