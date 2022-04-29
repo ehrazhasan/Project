@@ -11,13 +11,17 @@ public class instiUser implements Serializable {
     @Column(nullable = false, updatable = false)
     private Long Id;
 
-    private int Status;
+    private int Status = 0;
 
+    private String name;
+    private String contact;
     public instiUser() {}
 
-    public instiUser(Long id, int status) {
+    public instiUser(Long id, int status, String name, String contact) {
         Id = id;
         Status = status;
+        this.name = name;
+        this.contact = contact;
     }
 
     public Long getId() {
@@ -34,5 +38,21 @@ public class instiUser implements Serializable {
 
     public void setStatus(int status) {
         Status = status;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }

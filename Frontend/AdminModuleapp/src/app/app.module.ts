@@ -22,11 +22,13 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AdminService} from "./Service/admin.service";
 import {HttpClientModule} from "@angular/common/http";
+import { AdminPendingRequestsComponent } from './admin-pending-requests/admin-pending-requests.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent
+    AdminComponent,
+    AdminPendingRequestsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,4 +54,5 @@ import {HttpClientModule} from "@angular/common/http";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,163 +1,383 @@
 <!-- Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid justify-content-between">
-    <!-- Left elements -->
-    <div class="d-flex">
-      <!-- Brand -->
-      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
-        <img
-          src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp"
-          height="20"
-          alt=""
-          loading="lazy"
-          style="margin-top: 2px;"
-        />
-      </a>
-    </div>
-    <!-- Left elements -->
+<div class = "row">
+  <div class="col-sm-2 page-wrapper chiller-theme">
+    <nav id="sidebar" class="sidebar-wrapper">
+      <div class="sidebar-content">
+        <div class="sidebar-brand">
+          <div class="d-flex">
+            <!-- Brand -->
+            <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+              <img
+                src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp"
+                height="20"
+                alt=""
+                loading="lazy"
+                style="margin-top: 2px;"
+              />
+            </a>
+          </div>
+<!--          <div id="close-sidebar">-->
+<!--            <i class="fas fa-times"></i>-->
+<!--          </div>-->
+        </div>
+        <div class="sidebar-header">
+          <div class="user-pic">
+<!--            <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"-->
+<!--                 alt="User picture">-->
+            <img
+              src="https://mdbootstrap.com/img/new/avatars/1.webp"
+              class="rounded-circle"
+              height="22"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="user-info">
+          <span class="user-name">Ehraz
+            <strong>Hasan</strong>
+          </span>
+            <span class="user-role">Administrator</span>
+            <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+          </div>
+        </div>
+        <!-- sidebar-header  -->
+        <!--<div class="sidebar-search">-->
+        <!--  <div>-->
+        <!--    <div class="input-group">-->
+        <!--      <input type="text" class="form-control search-menu" placeholder="Search...">-->
+        <!--      <div class="input-group-append">-->
+        <!--        <span class="input-group-text">-->
+        <!--          <i class="fa fa-search" aria-hidden="true"></i>-->
+        <!--        </span>-->
+        <!--      </div>-->
+        <!--    </div>-->
+        <!--  </div>-->
+        <!--</div>-->
+        <!-- sidebar-search  -->
+        <div class="sidebar-menu">
+          <ul>
+            <li class="header-menu">
+              <span>General</span>
+            </li>
+            <li class="sidebar-dropdown">
+              <a routerLink="admin">
+                <i class="fa fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+                <!--<span class="badge badge-pill badge-warning">New</span>-->
+              </a>
+              <!--<div class="sidebar-submenu">-->
+              <!--  <ul>-->
+              <!--    <li>-->
+              <!--      <a href="#">Dashboard 1-->
+              <!--        <span class="badge badge-pill badge-success">Pro</span>-->
+              <!--      </a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Dashboard 2</a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Dashboard 3</a>-->
+              <!--    </li>-->
+              <!--  </ul>-->
+              <!--</div>-->
+            </li>
+            <li class="sidebar-dropdown">
+              <a routerLink="admin-pending-requests">
+                <i class="fa fa-shopping-cart"></i>
+                <span>Pending Requests</span>
+<!--                <span class="badge badge-pill badge-danger">3</span>-->
+              </a>
+              <!--<div class="sidebar-submenu">-->
+              <!--  <ul>-->
+              <!--    <li>-->
+              <!--      <a href="#">Products-->
 
-<!--    &lt;!&ndash; Center elements &ndash;&gt;-->
-<!--    <ul class="navbar-nav flex-row d-none d-md-flex">-->
-<!--      <li class="nav-item me-3 me-lg-1 active">-->
-<!--        <a class="nav-link" href="#">-->
-<!--          <span><i class="fas fa-home fa-lg"></i></span>-->
-<!--          <span class="badge rounded-pill badge-notification bg-danger">1</span>-->
-<!--        </a>-->
-<!--      </li>-->
-
-<!--      <li class="nav-item me-3 me-lg-1">-->
-<!--        <a class="nav-link" href="#">-->
-<!--          <span><i class="fas fa-flag fa-lg"></i></span>-->
-<!--        </a>-->
-<!--      </li>-->
-
-<!--      <li class="nav-item me-3 me-lg-1">-->
-<!--        <a class="nav-link" href="#">-->
-<!--          <span><i class="fas fa-video fa-lg"></i></span>-->
-<!--        </a>-->
-<!--      </li>-->
-
-<!--      <li class="nav-item me-3 me-lg-1">-->
-<!--        <a class="nav-link" href="#">-->
-<!--          <span><i class="fas fa-shopping-bag fa-lg"></i></span>-->
-<!--        </a>-->
-<!--      </li>-->
-
-<!--      <li class="nav-item me-3 me-lg-1">-->
-<!--        <a class="nav-link" href="#">-->
-<!--          <span><i class="fas fa-users fa-lg"></i></span>-->
-<!--          <span class="badge rounded-pill badge-notification bg-danger">2</span>-->
-<!--        </a>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--    &lt;!&ndash; Center elements &ndash;&gt;-->
-
-    <!-- Right elements -->
-    <ul class="navbar-nav flex-row">
-      <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
-          <img
-            src="https://mdbootstrap.com/img/new/avatars/1.webp"
-            class="rounded-circle"
-            height="22"
-            alt=""
-            loading="lazy"
-          />
-          <strong class="d-none d-sm-block ms-1">Ehraz</strong>
-        </a>
-      </li>
-    </ul>
-<!--      <li class="nav-item me-3 me-lg-1">-->
-<!--        <a class="nav-link" href="#">-->
-<!--          <span><i class="fas fa-plus-circle fa-lg"></i></span>-->
-<!--        </a>-->
-<!--      </li>-->
-<!--      <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">-->
-<!--        <a-->
-<!--          class="nav-link dropdown-toggle hidden-arrow"-->
-<!--          href="#"-->
-<!--          id="navbarDropdownMenuLink"-->
-<!--          role="button"-->
-<!--          mdbDropdownToggle-->
-<!--          aria-expanded="false"-->
-<!--        >-->
-<!--          <i class="fas fa-comments fa-lg"></i>-->
-
-<!--          <span class="badge rounded-pill badge-notification bg-danger">6</span>-->
-<!--        </a>-->
-<!--        <ul-->
-<!--          mdbDropdownMenu-->
-<!--          class="dropdown-menu dropdown-menu-end"-->
-<!--          aria-labelledby="navbarDropdownMenuLink"-->
-<!--        >-->
-<!--          <li>-->
-<!--            <a class="dropdown-item" href="#">Some news</a>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <a class="dropdown-item" href="#">Another news</a>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <a class="dropdown-item" href="#">Something else here</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </li>-->
-<!--      <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">-->
-<!--        <a-->
-<!--          class="nav-link dropdown-toggle hidden-arrow"-->
-<!--          href="#"-->
-<!--          id="navbarDropdownMenuLink"-->
-<!--          role="button"-->
-<!--          mdbDropdownToggle-->
-<!--          aria-expanded="false"-->
-<!--        >-->
-<!--          <i class="fas fa-bell fa-lg"></i>-->
-<!--          <span class="badge rounded-pill badge-notification bg-danger">12</span>-->
-<!--        </a>-->
-<!--        <ul-->
-<!--          mdbDropdownMenu-->
-<!--          class="dropdown-menu dropdown-menu-end"-->
-<!--          aria-labelledby="navbarDropdownMenuLink"-->
-<!--        >-->
-<!--          <li>-->
-<!--            <a class="dropdown-item" href="#">Some news</a>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <a class="dropdown-item" href="#">Another news</a>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <a class="dropdown-item" href="#">Something else here</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </li>-->
-<!--      <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">-->
-<!--        <a-->
-<!--          class="nav-link dropdown-toggle hidden-arrow"-->
-<!--          href="#"-->
-<!--          id="navbarDropdownMenuLink"-->
-<!--          role="button"-->
-<!--          mdbDropdownToggle-->
-<!--          aria-expanded="false"-->
-<!--        >-->
-<!--          <i class="fas fa-chevron-circle-down fa-lg"></i>-->
-<!--        </a>-->
-<!--        <ul-->
-<!--          mdbDropdownMenu-->
-<!--          class="dropdown-menu dropdown-menu-end"-->
-<!--          aria-labelledby="navbarDropdownMenuLink"-->
-<!--        >-->
-<!--          <li>-->
-<!--            <a class="dropdown-item" href="#">Some news</a>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <a class="dropdown-item" href="#">Another news</a>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <a class="dropdown-item" href="#">Something else here</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </li>-->
-    <!-- Right elements -->
+              <!--      </a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Orders</a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Credit cart</a>-->
+              <!--    </li>-->
+              <!--  </ul>-->
+              <!--</div>-->
+            </li>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="far fa-gem"></i>
+                <span>Institute Users</span>
+              </a>
+              <!--<div class="sidebar-submenu">-->
+              <!--  <ul>-->
+              <!--    <li>-->
+              <!--      <a href="#">General</a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Panels</a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Tables</a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Icons</a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Forms</a>-->
+              <!--    </li>-->
+              <!--  </ul>-->
+              <!--</div>-->
+            </li>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="fa fa-chart-line"></i>
+                <span>NGO users</span>
+              </a>
+              <!--<div class="sidebar-submenu">-->
+              <!--  <ul>-->
+              <!--    <li>-->
+              <!--      <a href="#">Pie chart</a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Line chart</a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Bar chart</a>-->
+              <!--    </li>-->
+              <!--    <li>-->
+              <!--      <a href="#">Histogram</a>-->
+              <!--    </li>-->
+              <!--  </ul>-->
+              <!--</div>-->
+            </li>
+            <!--<li class="sidebar-dropdown">-->
+            <!--  <a href="#">-->
+            <!--    <i class="fa fa-globe"></i>-->
+            <!--    <span>Maps</span>-->
+            <!--  </a>-->
+            <!--  <div class="sidebar-submenu">-->
+            <!--    <ul>-->
+            <!--      <li>-->
+            <!--        <a href="#">Google maps</a>-->
+            <!--      </li>-->
+            <!--      <li>-->
+            <!--        <a href="#">Open street map</a>-->
+            <!--      </li>-->
+            <!--    </ul>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="header-menu">-->
+            <!--  <span>Extra</span>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--  <a href="#">-->
+            <!--    <i class="fa fa-book"></i>-->
+            <!--    <span>Documentation</span>-->
+            <!--    <span class="badge badge-pill badge-primary">Beta</span>-->
+            <!--  </a>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--  <a href="#">-->
+            <!--    <i class="fa fa-calendar"></i>-->
+            <!--    <span>Calendar</span>-->
+            <!--  </a>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--  <a href="#">-->
+            <!--    <i class="fa fa-folder"></i>-->
+            <!--    <span>Examples</span>-->
+            <!--  </a>-->
+            <!--</li>-->
+          </ul>
+        </div>
+        <!-- sidebar-menu  -->
+      </div>
+      <!-- sidebar-conent  -->
+      <!--<div class="sidebar-footer">-->
+      <!--  <a href="#">-->
+      <!--    <i class="fa fa-bell"></i>-->
+      <!--    <span class="badge badge-pill badge-warning notification">3</span>-->
+      <!--  </a>-->
+      <!--  <a href="#">-->
+      <!--    <i class="fa fa-envelope"></i>-->
+      <!--    <span class="badge badge-pill badge-success notification">7</span>-->
+      <!--  </a>-->
+      <!--  <a href="#">-->
+      <!--    <i class="fa fa-cog"></i>-->
+      <!--    <span class="badge-sonar"></span>-->
+      <!--  </a>-->
+      <!--  <a href="#">-->
+      <!--    <i class="fa fa-power-off"></i>-->
+      <!--  </a>-->
+      <!--</div>-->
+    </nav>
   </div>
-</nav>
+  <div class="col-sm-10">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid justify-content-between">
+        <!-- Left elements -->
+        <div class="d-flex">
+          <!-- Brand -->
+<!--          <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">-->
+<!--            <img-->
+<!--              src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp"-->
+<!--              height="20"-->
+<!--              alt=""-->
+<!--              loading="lazy"-->
+<!--              style="margin-top: 2px;"-->
+<!--            />-->
+<!--          </a>-->
+        </div>
+        <!-- Left elements -->
+
+    <!--    &lt;!&ndash; Center elements &ndash;&gt;-->
+    <!--    <ul class="navbar-nav flex-row d-none d-md-flex">-->
+    <!--      <li class="nav-item me-3 me-lg-1 active">-->
+    <!--        <a class="nav-link" href="#">-->
+    <!--          <span><i class="fas fa-home fa-lg"></i></span>-->
+    <!--          <span class="badge rounded-pill badge-notification bg-danger">1</span>-->
+    <!--        </a>-->
+    <!--      </li>-->
+
+    <!--      <li class="nav-item me-3 me-lg-1">-->
+    <!--        <a class="nav-link" href="#">-->
+    <!--          <span><i class="fas fa-flag fa-lg"></i></span>-->
+    <!--        </a>-->
+    <!--      </li>-->
+
+    <!--      <li class="nav-item me-3 me-lg-1">-->
+    <!--        <a class="nav-link" href="#">-->
+    <!--          <span><i class="fas fa-video fa-lg"></i></span>-->
+    <!--        </a>-->
+    <!--      </li>-->
+
+    <!--      <li class="nav-item me-3 me-lg-1">-->
+    <!--        <a class="nav-link" href="#">-->
+    <!--          <span><i class="fas fa-shopping-bag fa-lg"></i></span>-->
+    <!--        </a>-->
+    <!--      </li>-->
+
+    <!--      <li class="nav-item me-3 me-lg-1">-->
+    <!--        <a class="nav-link" href="#">-->
+    <!--          <span><i class="fas fa-users fa-lg"></i></span>-->
+    <!--          <span class="badge rounded-pill badge-notification bg-danger">2</span>-->
+    <!--        </a>-->
+    <!--      </li>-->
+    <!--    </ul>-->
+    <!--    &lt;!&ndash; Center elements &ndash;&gt;-->
+
+        <!-- Right elements -->
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item me-3 me-lg-1">
+            <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+              <img
+                src="https://mdbootstrap.com/img/new/avatars/1.webp"
+                class="rounded-circle"
+                height="22"
+                alt=""
+                loading="lazy"
+              />
+              <strong class="d-none d-sm-block ms-1">LogOut</strong>
+            </a>
+          </li>
+        </ul>
+    <!--      <li class="nav-item me-3 me-lg-1">-->
+    <!--        <a class="nav-link" href="#">-->
+    <!--          <span><i class="fas fa-plus-circle fa-lg"></i></span>-->
+    <!--        </a>-->
+    <!--      </li>-->
+    <!--      <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">-->
+    <!--        <a-->
+    <!--          class="nav-link dropdown-toggle hidden-arrow"-->
+    <!--          href="#"-->
+    <!--          id="navbarDropdownMenuLink"-->
+    <!--          role="button"-->
+    <!--          mdbDropdownToggle-->
+    <!--          aria-expanded="false"-->
+    <!--        >-->
+    <!--          <i class="fas fa-comments fa-lg"></i>-->
+
+    <!--          <span class="badge rounded-pill badge-notification bg-danger">6</span>-->
+    <!--        </a>-->
+    <!--        <ul-->
+    <!--          mdbDropdownMenu-->
+    <!--          class="dropdown-menu dropdown-menu-end"-->
+    <!--          aria-labelledby="navbarDropdownMenuLink"-->
+    <!--        >-->
+    <!--          <li>-->
+    <!--            <a class="dropdown-item" href="#">Some news</a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a class="dropdown-item" href="#">Another news</a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a class="dropdown-item" href="#">Something else here</a>-->
+    <!--          </li>-->
+    <!--        </ul>-->
+    <!--      </li>-->
+    <!--      <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">-->
+    <!--        <a-->
+    <!--          class="nav-link dropdown-toggle hidden-arrow"-->
+    <!--          href="#"-->
+    <!--          id="navbarDropdownMenuLink"-->
+    <!--          role="button"-->
+    <!--          mdbDropdownToggle-->
+    <!--          aria-expanded="false"-->
+    <!--        >-->
+    <!--          <i class="fas fa-bell fa-lg"></i>-->
+    <!--          <span class="badge rounded-pill badge-notification bg-danger">12</span>-->
+    <!--        </a>-->
+    <!--        <ul-->
+    <!--          mdbDropdownMenu-->
+    <!--          class="dropdown-menu dropdown-menu-end"-->
+    <!--          aria-labelledby="navbarDropdownMenuLink"-->
+    <!--        >-->
+    <!--          <li>-->
+    <!--            <a class="dropdown-item" href="#">Some news</a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a class="dropdown-item" href="#">Another news</a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a class="dropdown-item" href="#">Something else here</a>-->
+    <!--          </li>-->
+    <!--        </ul>-->
+    <!--      </li>-->
+    <!--      <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">-->
+    <!--        <a-->
+    <!--          class="nav-link dropdown-toggle hidden-arrow"-->
+    <!--          href="#"-->
+    <!--          id="navbarDropdownMenuLink"-->
+    <!--          role="button"-->
+    <!--          mdbDropdownToggle-->
+    <!--          aria-expanded="false"-->
+    <!--        >-->
+    <!--          <i class="fas fa-chevron-circle-down fa-lg"></i>-->
+    <!--        </a>-->
+    <!--        <ul-->
+    <!--          mdbDropdownMenu-->
+    <!--          class="dropdown-menu dropdown-menu-end"-->
+    <!--          aria-labelledby="navbarDropdownMenuLink"-->
+    <!--        >-->
+    <!--          <li>-->
+    <!--            <a class="dropdown-item" href="#">Some news</a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a class="dropdown-item" href="#">Another news</a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a class="dropdown-item" href="#">Something else here</a>-->
+    <!--          </li>-->
+    <!--        </ul>-->
+    <!--      </li>-->
+        <!-- Right elements -->
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>
 <!-- Navbar -->
-<router-outlet></router-outlet>
+

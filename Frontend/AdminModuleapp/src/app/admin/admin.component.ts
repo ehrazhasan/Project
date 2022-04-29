@@ -10,45 +10,49 @@ import {HttpErrorResponse} from "@angular/common/http";
 })
 export class AdminComponent implements OnInit {
 
-  users : Admin[] = [];
-  constructor(private serviceAdmin : AdminService) { }
-
-  ngOnInit(): void {
-    // this.print();
-    this.fetchUsers();
+  ngOnInit() {
   }
 
-  // print() {
-  //   console.log('Hello');
-  //   console.log(this.users);
+  // users : Admin[] = [];
+  // constructor(private serviceAdmin : AdminService) { }
+  //
+  // ngOnInit(): void {
+  //   // this.print();
+  //   this.fetchUsers();
   // }
-
-  fetchUsers(){
-    this.serviceAdmin.fetchUsers().subscribe(
-      response => {
-        console.log(response);
-        this.users = response
-      }
-    );
-  }
-
-  onClick(mode:number, id : number) {
-
-    this.serviceAdmin.sendMode(mode,id,0).subscribe(
-      response => {
-        if(response == 1){
-          alert("Approved!");
-        }
-
-        if(response == 0){
-          alert("Rejected!");
-        }
-        window.location.reload();
-      },
-      (error : HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
-
-  }
+  //
+  // // print() {
+  // //   console.log('Hello');
+  // //   console.log(this.users);
+  // // }
+  //
+  // fetchUsers() : void{
+  //   this.serviceAdmin.fetchUsers().subscribe(
+  //     response => {
+  //       console.log(response);
+  //
+  //       this.users = response
+  //     }
+  //   );
+  // }
+  //
+  // onClick(mode:number, id : number) {
+  //
+  //   this.serviceAdmin.sendMode(mode,id,0).subscribe(
+  //     response => {
+  //       if(response == 1){
+  //         alert("Approved!");
+  //       }
+  //
+  //       if(response == 0){
+  //         alert("Rejected!");
+  //       }
+  //       window.location.reload();
+  //     },
+  //     (error : HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   )
+  //
+  // }
 }
