@@ -1,6 +1,6 @@
 <!-- Navbar-->
 <div class = "row">
-  <div class="col-sm-2 page-wrapper chiller-theme">
+  <div  class="col-sm-2 page-wrapper chiller-theme">
     <nav id="sidebar" class="sidebar-wrapper">
       <div class="sidebar-content">
         <div class="sidebar-brand">
@@ -15,10 +15,11 @@
                 style="margin-top: 2px;"
               />
             </a>
+            <div id="mySidebar"  (click)="closeNav()">
+              <a  class="closebtn">×</a>
+            </div>
           </div>
-<!--          <div id="close-sidebar">-->
-<!--            <i class="fas fa-times"></i>-->
-<!--          </div>-->
+
         </div>
         <div class="sidebar-header">
           <div class="user-pic">
@@ -107,7 +108,7 @@
               <!--</div>-->
             </li>
             <li class="sidebar-dropdown">
-              <a href="#">
+              <a routerLink="admin-institute-users">
                 <i class="fa fa-user"></i>
                 <span>Institute Users</span>
               </a>
@@ -230,6 +231,7 @@
 <!--              style="margin-top: 2px;"-->
 <!--            />-->
 <!--          </a>-->
+          <button class="openbtn" (click) ="openNav()">☰</button>
         </div>
         <!-- Left elements -->
 

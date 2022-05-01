@@ -13,4 +13,15 @@ export class AppComponent {
   goToRequests = () => {
     this.router.navigateByUrl('admin-pending-requests/admin-pending-requests.component.html');
   }
+
+
+  openNav() {
+    document.getElementById("sidebar")!.style.width = "16.66666667%";
+    document.getElementById("mySidebar")!.style.width = "120px";
+  }
+  closeNav() {
+    document.getElementById("sidebar")!.style.width = "0";
+    document.getElementById("mySidebar")!.style.width= "0";
+  }
+
 }
