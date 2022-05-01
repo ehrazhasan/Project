@@ -24,13 +24,15 @@ import {AdminService} from "./Service/admin.service";
 import {HttpClientModule} from "@angular/common/http";
 import { AdminPendingRequestsComponent } from './admin-pending-requests/admin-pending-requests.component';
 import { AdminInstituteUsersComponent } from './admin-institute-users/admin-institute-users.component';
+import { AdminNgoUsersComponent } from './admin-ngo-users/admin-ngo-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     AdminPendingRequestsComponent,
-    AdminInstituteUsersComponent
+    AdminInstituteUsersComponent,
+    AdminNgoUsersComponent
   ],
   imports: [
     BrowserModule,
