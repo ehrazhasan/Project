@@ -14,18 +14,13 @@ export class AdminPendingRequestsComponent implements OnInit {
   constructor(private serviceAdmin : AdminService) { }
 
   ngOnInit(): void {
-    // this.print();
     this.fetchUsers();
   }
-
-  // print() {
-  //   console.log('Hello');
-  //   console.log(this.users);
-  // }
 
   fetchUsers() : void{
     this.serviceAdmin.fetchUsers().subscribe(
       response => {
+
         console.log(response);
 
         this.users = response

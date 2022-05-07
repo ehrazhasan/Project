@@ -1,33 +1,32 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
 <div class="container">
   <div class="content contact-list">
     <div class="card card-default">
       <div class="card-header align-items-center px-3 px-md-5">
         <h2>Institute Users</h2>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-contact">Add User</button>
+        <button type="button" id = "myModal" class="btn btn-primary" data-toggle="modal" data-target="#form">Add User</button>
       </div>
 
       <div class="card-body px-3 px-md-5">
         <div class="row">
-          <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12">
+          <div *ngFor="let instiUser of instiUsers" class="col-lg-6 col-xl-4 col-md-6 col-sm-12">
             <div class="card card-default p-4">
               <a href="javascript:0" class="media text-secondary" data-toggle="modal" data-target="#modal-contact">
                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 img-fluid rounded" alt="Avatar Image" />
                 <div class="media-body">
-                  <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
+                  <h5 class="mt-0 mb-2 text-dark">{{instiUser.name}}</h5>
                   <ul class="list-unstyled text-smoke text-smoke">
                     <li class="d-flex">
                       <i class="mdi mdi-map mr-1"></i>
-                      <span>Nulla vel metus 15/178</span>
+                      <span>{{instiUser.address}}</span>
                     </li>
                     <li class="d-flex">
                       <i class="mdi mdi-email mr-1"></i>
-                      <span>exmaple@email.com</span>
+                      <span>{{instiUser.email}}</span>
                     </li>
                     <li class="d-flex">
                       <i class="mdi mdi-phone mr-1"></i>
-                      <span>(123) 888 777 632</span>
+                      <span>{{instiUser.contact}}</span>
                     </li>
                   </ul>
                 </div>
@@ -38,7 +37,8 @@
       </div>
     </div>
 
-<!--    &lt;!&ndash; Contact Modal &ndash;&gt;-->
+
+    <!-- Contact Modal -->
 <!--    <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
 <!--      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">-->
 <!--        <div class="modal-content">-->
@@ -118,7 +118,53 @@
 <!--      </div>-->
 <!--    </div>-->
 
-<!--    &lt;!&ndash; Add Contact Button  &ndash;&gt;-->
+
+    <!-- temporary -->
+    <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form #addInstiUser = "ngForm" (ngSubmit)="onAddInstiUser(addInstiUser)">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input ngModel type="text" class="form-control" name = "name" id="name"  placeholder="Enter name">
+              </div>
+              <div class="form-group">
+                <label for="email1">Email address</label>
+                <input ngModel type="email" class="form-control" name = "email" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="contact">Contact</label>
+                <input ngModel type="contact" class="form-control" name = "contact" id="contact" placeholder="Enter contact">
+              </div>
+              <div class="form-group">
+                <label for="address">Residential address</label>
+                <input ngModel type="address" class="form-control" name = "address" id="address" placeholder="Enter address">
+              </div>
+              <div class="form-group">
+                <label for="password1">Password</label>
+                <input ngModel type="password" class="form-control" name = "password" id="password1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="password1">Confirm Password</label>
+                <input ngModel type="password" class="form-control" name = "cnfpassword" id="password2" placeholder="Confirm Password">
+              </div>
+            </div>
+            <div class="modal-footer border-top-0 d-flex justify-content-center">
+              <button [disabled]="addInstiUser.invalid" type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Contact Button  -->
 <!--    <div class="modal fade" id="modal-add-contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
 <!--      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">-->
 <!--        <div class="modal-content">-->
@@ -192,3 +238,4 @@
 <!--    </div>-->
   </div>
 </div>
+
