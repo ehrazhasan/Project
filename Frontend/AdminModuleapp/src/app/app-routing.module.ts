@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {AdminComponent} from "./admin/admin.component";
 import {AdminPendingRequestsComponent} from "./admin-pending-requests/admin-pending-requests.component";
 import {AdminInstituteUsersComponent} from "./admin-institute-users/admin-institute-users.component";
+import {AdminNgoUsersComponent} from "./admin-ngo-users/admin-ngo-users.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
   },
   {
     path:'admin-institute-users', component:AdminInstituteUsersComponent
+  },
+  {
+    path:'admin-ngo-users', component:AdminNgoUsersComponent
   }
 ];
 

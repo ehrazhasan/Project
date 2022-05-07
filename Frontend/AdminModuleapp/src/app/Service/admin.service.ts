@@ -14,8 +14,6 @@ export class AdminService {
     return this.http.get<Admin[]>("http://localhost:8080/InstiUser/get");
   }
 
-
-
   sendMode(mode: number,id: number ,status: number){
     return this.http.put(`http://localhost:8080/InstiUser/update/${id}/${mode}`, status);
   }
