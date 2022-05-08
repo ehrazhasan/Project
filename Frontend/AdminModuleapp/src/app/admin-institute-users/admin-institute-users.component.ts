@@ -100,7 +100,26 @@ export class AdminInstituteUsersComponent implements OnInit {
          updateInstiUser.reset();
         }
       );
-      // window.location.reload();
+      this.reload();
     }
+  }
+
+  onDeleteInstiUser(deleteInstiUser: NgForm) {
+
+      console.log(deleteInstiUser);
+      this.serviceInstiUsrs.deleteInstiUser(deleteInstiUser.value.id).subscribe(
+          response => {
+            console.log(response);
+          },
+        (error : HttpErrorResponse) => {
+            console.log(error.message);
+          }
+      );
+
+      // this.reload();
+  }
+
+  reload() {
+    window.location.reload();
   }
 }

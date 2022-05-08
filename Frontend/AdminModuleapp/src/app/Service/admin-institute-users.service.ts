@@ -22,4 +22,9 @@ export class AdminInstituteUsersService {
     console.log(instiUser);
     return this.http.put("http://localhost:8080/api/institute/update", instiUser);
   }
+
+  deleteInstiUser(id : number) {
+    console.log(id);
+    return this.http.delete(`http://localhost:8080/api/institute/delete/${id}`);
+  }
 }
