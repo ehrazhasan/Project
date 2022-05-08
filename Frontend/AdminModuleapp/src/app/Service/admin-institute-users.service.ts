@@ -19,6 +19,7 @@ export class AdminInstituteUsersService {
   }
 
   updateInstiUser(instiUser: AdminInstituteUsers) {
+    console.log("Service");
     console.log(instiUser);
     return this.http.put("http://localhost:8080/api/institute/update", instiUser);
   }

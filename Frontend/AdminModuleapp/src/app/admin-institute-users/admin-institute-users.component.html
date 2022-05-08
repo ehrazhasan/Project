@@ -15,7 +15,7 @@
               <a href="#" class="media text-secondary" data-toggle="modal" data-target="#modal-contact">
                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 img-fluid rounded" alt="Avatar Image" />
                 <div class="iconContainer">
-                  <button id = "editModal" data-toggle="modal" data-target="#editForm" class="btn btn-success btn-sm rounded-0 mx-1" type="button"  data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                  <button id = "editModal" data-toggle="modal" data-target="#editForm" class="btn btn-success btn-sm rounded-0 mx-1" type="button"  data-placement="top" (click)="onEdit(instiUser)" title="Edit"><i class="fa fa-edit"></i></button>
                   <button id = "deleteModal" data-toggle="modal" data-target="#deleteForm" class="btn btn-danger btn-sm rounded-0 mx-1" type="button"  data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
                 </div>
                 <div class="media-body">
@@ -32,6 +32,10 @@
                     <li class="d-flex">
                       <i class="mdi mdi-phone mr-1"></i>
                       <span>{{instiUser.contact}}</span>
+                    </li>
+                    <li class="d-flex">
+                      <i class="mdi mdi-phone mr-1"></i>
+                      <span>{{instiUser.user.id}}</span>
                     </li>
                   </ul>
                 </div>
@@ -52,33 +56,33 @@
                     <div class="modal-body">
                       <div class="form-group">
                         <label for="name">Name</label>
-                        <input ngModel = "{{instiUser?.name}}" type="text" class="form-control" name = "name" placeholder="Enter name">
-                        <input ngModel = "{{instiUser?.id}}" type="hidden" class="form-control" name = "id" placeholder="Enter name">
-                        <input ngModel = "{{instiUser.user?.id}}" type="hidden" class="form-control" name = "userId" placeholder="Enter name">
+                        <input ngModel = "{{editInstiUser?.name}}" type="text" class="form-control" name = "name" placeholder="Enter name">
+                        <input ngModel = "{{editInstiUser?.id}}" type="hidden" class="form-control" name = "id" placeholder="Enter name">
+                        <input ngModel = "{{editInstiUser?.user?.id}}" type="hidden" class="form-control" name = "userId" placeholder="Enter name">
                       </div>
                       <div class="form-group">
                         <label for="email1">Email address</label>
-                        <input ngModel = "{{instiUser?.email}}" type="email" class="form-control" name = "email" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input ngModel = "{{editInstiUser?.email}}" type="email" class="form-control" name = "email" aria-describedby="emailHelp" placeholder="Enter email">
                       </div>
                       <div class="form-group">
                         <label for="contact">Contact</label>
-                        <input ngModel = "{{instiUser?.contact}}" type="contact" class="form-control" name = "contact"  placeholder="Enter contact">
+                        <input ngModel = "{{editInstiUser?.contact}}" type="contact" class="form-control" name = "contact"  placeholder="Enter contact">
                       </div>
                       <div class="form-group">
                         <label for="address">Residential address</label>
-                        <input ngModel = "{{instiUser?.address}}" type="address" class="form-control" name = "address"  placeholder="Enter address">
+                        <input ngModel = "{{editInstiUser?.address}}" type="address" class="form-control" name = "address"  placeholder="Enter address">
                       </div>
                       <div class="form-group">
                         <label for="password1">Password</label>
-                        <input ngModel = "{{instiUser.user?.password}}" type="password" class="form-control" name = "password" placeholder="Password">
+                        <input ngModel = "{{editInstiUser?.user?.password}}" type="password" class="form-control" name = "password" placeholder="Password">
                       </div>
                       <div class="form-group">
                         <label for="password1">Confirm Password</label>
-                        <input ngModel = "{{instiUser.user?.password}}" type="password" class="form-control" name = "cnfpassword"  placeholder="Confirm Password">
+                        <input ngModel = "{{editInstiUser?.user?.password}}" type="password" class="form-control" name = "cnfpassword"  placeholder="Confirm Password">
                       </div>
                     </div>
                     <div class="modal-footer border-top-0 d-flex justify-content-center">
-                      <button [disabled]="updateInstiUser.invalid" type="submit" class="btn btn-success">Submit</button>
+                      <button [disabled]="updateInstiUser.invalid"  type="submit" class="btn btn-success">Submit</button>
                     </div>
                   </form>
                 </div>
@@ -127,7 +131,7 @@
                     </div>
                     <div class="modal-footer border-top-0 d-flex justify-content-center">
                       <button [disabled]="deleteInstiUser.invalid" type="submit" class="btn btn-success">Yes</button>
-                      <button [disabled]="deleteInstiUser.invalid" (click) = "reload()" type="submit" class="btn btn-success">No</button>
+                      <button [disabled]="deleteInstiUser.invalid" (click) = "reload()" type="button" class="btn btn-success">No</button>
                     </div>
                   </form>
                 </div>

@@ -11,8 +11,10 @@ import {User} from "../Model/user";
   styleUrls: ['./admin-institute-users.component.scss']
 })
 export class AdminInstituteUsersComponent implements OnInit {
-
+  editInstiUser = {} as AdminInstituteUsers;
   instiUsers : AdminInstituteUsers[] = [];
+  private cnfpassword : string = "";
+  private password : string = "";
   constructor(private serviceInstiUsrs : AdminInstituteUsersService) { }
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class AdminInstituteUsersComponent implements OnInit {
 
   instiUser : AdminInstituteUsers = {} as AdminInstituteUsers;
   user : User = {} as User;
+
 
   onAddInstiUser(addInstiUser: NgForm) {
 
@@ -69,6 +72,19 @@ export class AdminInstituteUsersComponent implements OnInit {
       }
   }
 
+  onEdit(instiUser: AdminInstituteUsers) {
+      this.editInstiUser = instiUser;
+      console.log("here");
+      console.log(this.editInstiUser);
+  }
+
+  // getFormValue(updateInstiUser: NgForm) {
+  //     this.cnfpassword =
+  //     this.password = updateInstiUser.value.password;
+  //     console.log("getForm");
+  //     console.log(updateInstiUser);
+  // }
+
   onUpdateInstiUser(updateInstiUser: NgForm) {
 
     const val1 = updateInstiUser.value.password;
@@ -93,11 +109,11 @@ export class AdminInstituteUsersComponent implements OnInit {
       this.serviceInstiUsrs.updateInstiUser(this.instiUser).subscribe(
         response => {
           console.log(response);
-          updateInstiUser.reset();
+          //updateInstiUser.reset();
         },
         (error: HttpErrorResponse) => {
           console.log(error.message);
-         updateInstiUser.reset();
+         //updateInstiUser.reset();
         }
       );
       this.reload();
@@ -116,10 +132,13 @@ export class AdminInstituteUsersComponent implements OnInit {
           }
       );
 
-      // this.reload();
+      this.reload();
   }
 
   reload() {
     window.location.reload();
   }
+
+
+
 }
