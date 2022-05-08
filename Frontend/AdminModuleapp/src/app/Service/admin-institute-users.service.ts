@@ -15,6 +15,11 @@ export class AdminInstituteUsersService {
 
   addInstiUser(instiUser: AdminInstituteUsers) {
 
-      return this.http.post("http://localhost:8080/api/institute/addInstiUserByAdmin",instiUser);
+      return this.http.post("http://localhost:8080/api/institute/add",instiUser);
+  }
+
+  updateInstiUser(instiUser: AdminInstituteUsers) {
+    console.log(instiUser);
+    return this.http.put("http://localhost:8080/api/institute/update", instiUser);
   }
 }

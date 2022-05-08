@@ -41,24 +41,66 @@ export class AdminInstituteUsersComponent implements OnInit {
       const val1 = addInstiUser.value.password;
       const val2 = addInstiUser.value.cnfpassword;
 
-      if(val1 != val2) confirm("NO");
+      if(val1 != val2) {
+        alert("The password does not match!");
+      }
+      else {
+        this.instiUser.name = addInstiUser.value.name;
+        this.instiUser.contact = addInstiUser.value.contact;
+        this.instiUser.email = addInstiUser.value.email;
+        this.instiUser.address = addInstiUser.value.address;
+        this.user.email = addInstiUser.value.email;
+        this.user.password = addInstiUser.value.password;
+        this.user.role = "Institute";
+        this.instiUser.user = this.user;
 
-      this.instiUser.name = addInstiUser.value.name;
-      this.instiUser.contact = addInstiUser.value.contact;
-      this.instiUser.email = addInstiUser.value.email;
-      this.instiUser.address = addInstiUser.value.address;
-      this.user.email = addInstiUser.value.email;
-      this.user.password = addInstiUser.value.password;
+        this.serviceInstiUsrs.addInstiUser(this.instiUser).subscribe(
+          response => {
+            console.log(response);
+            addInstiUser.reset();
+          },
+          (error: HttpErrorResponse) => {
+            console.log(error.message);
+            addInstiUser.reset();
+          }
+        );
+
+        window.location.reload();
+      }
+  }
+
+  onUpdateInstiUser(updateInstiUser: NgForm) {
+
+    const val1 = updateInstiUser.value.password;
+    const val2 = updateInstiUser.value.cnfpassword;
+
+    if(val1 != val2) {
+      alert("The password does not match!");
+    }
+    else{
+      console.log(updateInstiUser);
+      this.instiUser.id = updateInstiUser.value.id;
+      this.instiUser.name = updateInstiUser.value.name;
+      this.instiUser.email = updateInstiUser.value.email;
+      this.instiUser.address = updateInstiUser.value.address;
+      this.instiUser.contact = updateInstiUser.value.contact;
+      this.user.email = updateInstiUser.value.email;
+      this.user.id = updateInstiUser.value.userId;
+      this.user.password = updateInstiUser.value.password;
       this.user.role = "Institute";
       this.instiUser.user = this.user;
 
-      this.serviceInstiUsrs.addInstiUser(this.instiUser).subscribe(
+      this.serviceInstiUsrs.updateInstiUser(this.instiUser).subscribe(
         response => {
           console.log(response);
+          updateInstiUser.reset();
         },
-      (error : HttpErrorResponse) => {
+        (error: HttpErrorResponse) => {
           console.log(error.message);
-      }
+         updateInstiUser.reset();
+        }
       );
+      // window.location.reload();
+    }
   }
 }
