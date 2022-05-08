@@ -11,8 +11,13 @@
         <div class="row">
           <div *ngFor="let instiUser of instiUsers" class="col-lg-6 col-xl-4 col-md-6 col-sm-12">
             <div class="card card-default p-4">
-              <a href="javascript:0" class="media text-secondary" data-toggle="modal" data-target="#modal-contact">
+
+              <a href="#" class="media text-secondary" data-toggle="modal" data-target="#modal-contact">
                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 img-fluid rounded" alt="Avatar Image" />
+                <div class="iconContainer">
+                  <button id = "editModal" data-toggle="modal" data-target="#editForm" class="btn btn-success btn-sm rounded-0 mx-1" type="button"  data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                  <button id = "deleteModal" class="btn btn-danger btn-sm rounded-0 mx-1" type="button"  data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                </div>
                 <div class="media-body">
                   <h5 class="mt-0 mb-2 text-dark">{{instiUser.name}}</h5>
                   <ul class="list-unstyled text-smoke text-smoke">
@@ -32,6 +37,54 @@
                 </div>
               </a>
             </div>
+
+            <!-- Edit User Modal -->
+            <div class="modal fade" id="editForm" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModal">Edit User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form #updateInstiUser = "ngForm" (ngSubmit)="onUpdateInstiUser(updateInstiUser)">
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input ngModel = "{{instiUser?.name}}" type="text" class="form-control" name = "name" placeholder="Enter name">
+                        <input ngModel = "{{instiUser?.id}}" type="hidden" class="form-control" name = "id" placeholder="Enter name">
+                        <input ngModel = "{{instiUser.user?.id}}" type="hidden" class="form-control" name = "userId" placeholder="Enter name">
+                      </div>
+                      <div class="form-group">
+                        <label for="email1">Email address</label>
+                        <input ngModel = "{{instiUser?.email}}" type="email" class="form-control" name = "email" aria-describedby="emailHelp" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <label for="contact">Contact</label>
+                        <input ngModel = "{{instiUser?.contact}}" type="contact" class="form-control" name = "contact"  placeholder="Enter contact">
+                      </div>
+                      <div class="form-group">
+                        <label for="address">Residential address</label>
+                        <input ngModel = "{{instiUser?.address}}" type="address" class="form-control" name = "address"  placeholder="Enter address">
+                      </div>
+                      <div class="form-group">
+                        <label for="password1">Password</label>
+                        <input ngModel = "{{instiUser.user?.password}}" type="password" class="form-control" name = "password" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <label for="password1">Confirm Password</label>
+                        <input ngModel = "{{instiUser.user?.password}}" type="password" class="form-control" name = "cnfpassword"  placeholder="Confirm Password">
+                      </div>
+                    </div>
+                    <div class="modal-footer border-top-0 d-flex justify-content-center">
+                      <button [disabled]="updateInstiUser.invalid" type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -119,7 +172,7 @@
 <!--    </div>-->
 
 
-    <!-- temporary -->
+    <!-- Add User Modal -->
     <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -163,6 +216,8 @@
         </div>
       </div>
     </div>
+
+
 
     <!-- Add Contact Button  -->
 <!--    <div class="modal fade" id="modal-add-contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
