@@ -14,6 +14,10 @@ export class AdminNgoUsersService {
     return this.http.get<AdminNgoUsers[]>("http://localhost:8080/api/ngo/get");
   }
 
+  fetchUsersByStatus() {
+    return this.http.get<AdminNgoUsers[]>("http://localhost:8080/api/ngo/getByStatus");
+  }
+
   addNgoUser(ngoUser: AdminNgoUsers) {
     return this.http.post("http://localhost:8080/api/ngo/add",ngoUser);
   }

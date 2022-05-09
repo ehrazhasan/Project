@@ -26,7 +26,7 @@ export class AdminPendingRequestsComponent implements OnInit {
   }
 
   fetchInstiUsers() : void{
-    this.serviceInstiUser.fetchUsrs().subscribe(
+    this.serviceInstiUser.fetchUsersByStatus().subscribe(
       response => {
         console.log("serviceInstiUser");
         console.log(response);
@@ -39,7 +39,7 @@ export class AdminPendingRequestsComponent implements OnInit {
   }
 
   fetchNgoUsers() : void{
-    this.serviceNgoUser.fetchUsrs().subscribe(
+    this.serviceNgoUser.fetchUsersByStatus().subscribe(
       (response) => {
         console.log("serviceNgoUser");
         console.log(response);
@@ -53,9 +53,8 @@ export class AdminPendingRequestsComponent implements OnInit {
 
 
 
-  onClick(mode:number, id : number) {
-
-    this.serviceAdmin.sendMode(mode,id,0).subscribe(
+  onClick(mode:number, id : number, ngoId : string) {
+    this.serviceAdmin.sendMode(mode,id,0, ngoId).subscribe(
       response => {
         if(response == 1){
           alert("Approved!");
