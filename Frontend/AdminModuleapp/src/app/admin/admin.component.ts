@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {AdminService} from "../Service/admin.service";
 import {Admin} from "../Model/admin.model";
 import {HttpErrorResponse} from "@angular/common/http";
+import {AdminInstituteUsersService} from "../Service/admin-institute-users.service";
+import {AdminNgoUsersService} from "../Service/admin-ngo-users.service";
 
 @Component({
   selector: 'app-admin',
@@ -9,50 +11,36 @@ import {HttpErrorResponse} from "@angular/common/http";
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  instiSize: number = 0;
+  ngoSize: number = 0;
 
   ngOnInit() {
+    this.fetchInstiUsers();
+    this.fetchNgoUsers();
   }
 
-  // users : Admin[] = [];
-  // constructor(private serviceAdmin : AdminService) { }
-  //
-  // ngOnInit(): void {
-  //   // this.print();
-  //   this.fetchUsers();
-  // }
-  //
-  // // print() {
-  // //   console.log('Hello');
-  // //   console.log(this.users);
-  // // }
-  //
-  // fetchUsers() : void{
-  //   this.serviceAdmin.fetchUsers().subscribe(
-  //     response => {
-  //       console.log(response);
-  //
-  //       this.users = response
-  //     }
-  //   );
-  // }
-  //
-  // onClick(mode:number, id : number) {
-  //
-  //   this.serviceAdmin.sendMode(mode,id,0).subscribe(
-  //     response => {
-  //       if(response == 1){
-  //         alert("Approved!");
-  //       }
-  //
-  //       if(response == 0){
-  //         alert("Rejected!");
-  //       }
-  //       window.location.reload();
-  //     },
-  //     (error : HttpErrorResponse) => {
-  //       alert(error.message);
-  //     }
-  //   )
-  //
-  // }
+  constructor(private seriveInstiUser : AdminInstituteUsersService, private serviceNgoUser : AdminNgoUsersService) {
+  }
+
+  fetchInstiUsers() {
+    this.seriveInstiUser.fetchUsrs().subscribe(
+      response => {
+        this.instiSize = response.length;
+      },
+    (error : HttpErrorResponse) => {
+        console.log(error.message);
+    }
+    );
+  }
+
+  fetchNgoUsers() {
+    this.serviceNgoUser.fetchUsrs().subscribe(
+      response => {
+        this.ngoSize = response.length;
+      },
+      (error : HttpErrorResponse) => {
+        console.log(error.message);
+       }
+    );
+  }
 }

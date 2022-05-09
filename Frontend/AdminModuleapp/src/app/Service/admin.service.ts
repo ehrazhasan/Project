@@ -10,10 +10,6 @@ export class AdminService {
 
   constructor(private http: HttpClient) {}
 
-  // fetchUsers(){
-  //   return this.http.get<Admin[]>("http://localhost:8080/InstiUser/get");
-  // }
-
   sendMode(mode: number,id: number ,status: number, ngoId : string){
     if (typeof ngoId !== 'undefined')
       return this.http.put(`http://localhost:8080/api/ngo/updateStatus/${id}/${mode}`, status);
