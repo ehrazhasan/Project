@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {HttpErrorResponse} from "@angular/common/http";
 import {Admin} from "../Model/admin.model";
 import {AdminService} from "../Service/admin.service";
+import {AdminNgoUsersService} from "../Service/admin-ngo-users.service";
+import {AdminInstituteUsersService} from "../Service/admin-institute-users.service";
+import {AdminInstituteUsers} from "../Model/admin-institute-users";
+import {AdminNgoUsers} from "../Model/admin-ngo-users";
 
 @Component({
   selector: 'app-admin-pending-requests',
@@ -10,23 +14,44 @@ import {AdminService} from "../Service/admin.service";
 })
 export class AdminPendingRequestsComponent implements OnInit {
 
-  users : Admin[] = [];
-  constructor(private serviceAdmin : AdminService) { }
+  users : any[] = [];
+  instiUser : AdminInstituteUsers[] = [];
+  ngoUser : AdminNgoUsers[] = [];
+  constructor(private serviceAdmin : AdminService, private serviceNgoUser : AdminNgoUsersService,
+              private serviceInstiUser : AdminInstituteUsersService) {}
 
   ngOnInit(): void {
-    this.fetchUsers();
+    this.fetchNgoUsers();
+    this.fetchInstiUsers();
   }
 
-  fetchUsers() : void{
-    this.serviceAdmin.fetchUsers().subscribe(
+  fetchInstiUsers() : void{
+    this.serviceInstiUser.fetchUsrs().subscribe(
       response => {
-
+        console.log("serviceInstiUser");
         console.log(response);
-
-        this.users = response
+        this.instiUser = response;
+        for (let i = 0; i < this.instiUser.length; i++) {
+          this.users.push(this.instiUser[i]);
+        }
       }
     );
   }
+
+  fetchNgoUsers() : void{
+    this.serviceNgoUser.fetchUsrs().subscribe(
+      (response) => {
+        console.log("serviceNgoUser");
+        console.log(response);
+        this.ngoUser = response;
+        for (let i = 0; i < this.ngoUser.length; i++) {
+          this.users.push(this.ngoUser[i]);
+        }
+      }
+    );
+  }
+
+
 
   onClick(mode:number, id : number) {
 
