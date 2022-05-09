@@ -439,20 +439,32 @@ body {
   border-right: none;
 }
 
+.sidebar{
+  width: 230px;
+}
+
 #mySidebar{
 
   width : 120px;
   text-align: right;
   z-index: 3;
 }
-.closebtn{
 
+.openbtn{
+  display: none;
+}
+
+
+.closebtn{
+  display: none;
   font-size: 40px;
   color: white;
   z-index: 3;
 }
 
 @media screen and (max-width: 576px) {
+  .openbtn {display: block};
+  .closebtn {display: block};
   .page-wrapper {height : 0px}
   #sidebar {width : 0px}
 }
