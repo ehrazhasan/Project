@@ -105,11 +105,11 @@ export class AdminInstituteUsersComponent implements OnInit {
       this.serviceInstiUsrs.updateInstiUser(this.instiUser).subscribe(
         response => {
           console.log(response);
-          //updateInstiUser.reset();
+          updateInstiUser.reset();
         },
         (error: HttpErrorResponse) => {
           console.log(error.message);
-         //updateInstiUser.reset();
+         updateInstiUser.reset();
         }
       );
       this.reload();
