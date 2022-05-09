@@ -15,8 +15,8 @@
               <a href="#" class="media text-secondary" data-toggle="modal" data-target="#modal-contact">
                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 img-fluid rounded" alt="Avatar Image" />
                 <div class="iconContainer">
-                  <button id = "editModal" data-toggle="modal" data-target="#editForm" class="btn btn-success btn-sm rounded-0 mx-1" type="button"  data-placement="top" (click)="onEdit(instiUser)" title="Edit"><i class="fa fa-edit"></i></button>
-                  <button id = "deleteModal" data-toggle="modal" data-target="#deleteForm" class="btn btn-danger btn-sm rounded-0 mx-1" type="button"  data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                  <button id = "editModal" data-toggle="modal" data-target="#editForm" class="btn btn-success btn-sm rounded-0 mx-1" type="button"  data-placement="top" (click)="onClick(instiUser)" title="Edit"><i class="fa fa-edit"></i></button>
+                  <button id = "deleteModal" data-toggle="modal" data-target="#deleteForm" class="btn btn-danger btn-sm rounded-0 mx-1" type="button"  data-placement="top" (click)="onClick(instiUser)" title="Delete"><i class="fa fa-trash"></i></button>
                 </div>
                 <div class="media-body">
                   <h5 class="mt-0 mb-2 text-dark">{{instiUser.name}}</h5>
@@ -98,30 +98,30 @@
                   <form #deleteInstiUser = "ngForm" (ngSubmit)="onDeleteInstiUser(deleteInstiUser)">
                     <div class="modal-body">
                       <div class="form-group">
-                        <label for="name">Name: <span>{{instiUser?.name}}</span></label>
-                        <input ngModel = "{{instiUser?.name}}" type="hidden" class="form-control" name = "name" placeholder="Enter name">
-                        <input ngModel = "{{instiUser?.id}}" type="hidden" class="form-control" name = "id" placeholder="Enter name">
-                        <input ngModel = "{{instiUser.user?.id}}" type="hidden" class="form-control" name = "userId" placeholder="Enter name">
+                        <label for="name">Name: <span>{{removeInstiUser?.name}}</span></label>
+                        <input ngModel = "{{removeInstiUser?.name}}" type="hidden" class="form-control" name = "name" placeholder="Enter name">
+                        <input ngModel = "{{removeInstiUser?.id}}" type="hidden" class="form-control" name = "id" placeholder="Enter name">
+                        <input ngModel = "{{removeInstiUser?.user?.id}}" type="hidden" class="form-control" name = "userId" placeholder="Enter name">
                       </div>
                       <div class="form-group">
-                        <label for="email1">Email address: <span>{{instiUser?.email}}</span></label>
-                        <input ngModel = "{{instiUser?.email}}" type="hidden" class="form-control" name = "email" aria-describedby="emailHelp" placeholder="Enter email">
+                        <label for="email1">Email address: <span>{{removeInstiUser?.email}}</span></label>
+                        <input ngModel = "{{removeInstiUser?.email}}" type="hidden" class="form-control" name = "email" aria-describedby="emailHelp" placeholder="Enter email">
                       </div>
                       <div class="form-group">
-                        <label for="contact">Contact: <span>{{instiUser?.contact}}</span></label>
-                        <input ngModel = "{{instiUser?.contact}}" type="hidden" class="form-control" name = "contact"  placeholder="Enter contact">
+                        <label for="contact">Contact: <span>{{removeInstiUser?.contact}}</span></label>
+                        <input ngModel = "{{removeInstiUser?.contact}}" type="hidden" class="form-control" name = "contact"  placeholder="Enter contact">
                       </div>
                       <div class="form-group">
-                        <label for="address">Residential address: <span>{{instiUser?.address}}</span></label>
-                        <input ngModel = "{{instiUser?.address}}" type="hidden" class="form-control" name = "address"  placeholder="Enter address">
+                        <label for="address">Residential address: <span>{{removeInstiUser?.address}}</span></label>
+                        <input ngModel = "{{removeInstiUser?.address}}" type="hidden" class="form-control" name = "address"  placeholder="Enter address">
                       </div>
                       <div class="form-group">
 <!--                        <label for="password1">Password</label>-->
-                        <input ngModel = "{{instiUser.user?.password}}" type="hidden" class="form-control" name = "password" placeholder="Password">
+                        <input ngModel = "{{removeInstiUser?.user?.password}}" type="hidden" class="form-control" name = "password" placeholder="Password">
                       </div>
                       <div class="form-group">
 <!--                        <label for="password1">Confirm Password</label>-->
-                        <input ngModel = "{{instiUser.user?.password}}" type="hidden" class="form-control" name = "cnfpassword"  placeholder="Confirm Password">
+                        <input ngModel = "{{removeInstiUser?.user?.password}}" type="hidden" class="form-control" name = "cnfpassword"  placeholder="Confirm Password">
                       </div>
                     </div>
                     <div class="modal-footer border-top-0 d-flex justify-content-center">

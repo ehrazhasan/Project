@@ -11,6 +11,7 @@ import {User} from "../Model/user";
   styleUrls: ['./admin-institute-users.component.scss']
 })
 export class AdminInstituteUsersComponent implements OnInit {
+  removeInstiUser = {} as AdminInstituteUsers;
   editInstiUser = {} as AdminInstituteUsers;
   instiUsers : AdminInstituteUsers[] = [];
   private cnfpassword : string = "";
@@ -72,18 +73,13 @@ export class AdminInstituteUsersComponent implements OnInit {
       }
   }
 
-  onEdit(instiUser: AdminInstituteUsers) {
+  onClick(instiUser: AdminInstituteUsers) {
       this.editInstiUser = instiUser;
-      console.log("here");
-      console.log(this.editInstiUser);
-  }
+      this.removeInstiUser = instiUser;
+      console.log("deleteInstiUser");
+      console.log(this.removeInstiUser);
 
-  // getFormValue(updateInstiUser: NgForm) {
-  //     this.cnfpassword =
-  //     this.password = updateInstiUser.value.password;
-  //     console.log("getForm");
-  //     console.log(updateInstiUser);
-  // }
+  }
 
   onUpdateInstiUser(updateInstiUser: NgForm) {
 
